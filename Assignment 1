@@ -1,1 +1,107 @@
+Q1. Write a program to check whether a number is even or odd.
+#include <stdio.h>
+void main()
+{
+    int num=8;
 
+    if(num % 2 == 0)
+        printf("Even Number");
+    else
+        printf("Odd Number");
+}
+
+Q2. Write a program to check given 3 digit number is palindrome or not.
+#include <stdio.h>
+void main()
+{
+    int num=121, rev, a, b, c;
+    a = num / 100;
+    b = (num / 10) % 10;
+    c = num % 10;
+
+    rev = c * 100 + b * 10 + a;
+
+    if(num == rev)
+        printf("Palindrome Number");
+    else
+        printf("Not a Palindrome Number");
+}
+
+Q3. Write a program to check whether a given year is a leap year.
+#include <stdio.h>
+void main()
+{
+    int year=2017;
+
+    if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        printf("Leap Year");
+    else
+        printf("Not a Leap Year"); 
+}
+
+Q4. Write a program to check whether a given character is a vowel or consonant.
+#include <stdio.h>
+void main()
+{
+    char ch='e';
+
+    if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'||
+       ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+        printf("Vowel");
+    else
+        printf("Consonant");
+
+}
+
+Q5. Write a program to check whether a person is eligible to vote (age >= 18).
+#include<stdio.h>
+void main()
+{
+	int age=19;
+	if(age >= 18)
+	{
+		printf("Eligible");
+	}
+	else
+	{
+		printf("Not eligible");
+	}
+}
+
+Q6. Write a program to check whether a given character is uppercase or lowercase.
+#include <stdio.h>
+void main()
+{
+    char ch = 'D';
+
+    if(ch >= 'A' && ch <= 'Z')
+        printf("Uppercase");
+    else if(ch >= 'a' && ch <= 'z')
+        printf("Lowercase");
+    else
+        printf("Not an Alphabet");
+}
+
+Q7. Calculating total salary based on basic. If basic <= 5000, DA, TA and HRA will be 10%, 20% and 25% respectively; otherwise DA, TA and HRA will be 15%, 25% and 30% respectively.
+#include <stdio.h>
+int main()
+{
+    float basic = 4000, da, ta, hra, total;
+
+    if(basic <= 5000)
+    {
+        da = basic * 10 / 100;
+        ta = basic * 20 / 100;
+        hra = basic * 25 / 100;
+    }
+    else
+    {
+        da = basic * 15 / 100;
+        ta = basic * 25 / 100;
+        hra = basic * 30 / 100;
+    }
+
+    total = basic + da + ta + hra;
+
+    printf("Total Salary = %f", total);
+}
