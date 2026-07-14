@@ -1,0 +1,1765 @@
+Function
+Q1. Convert Assignment 1 and Assignment 2 programs into functions with four types of functions.
+Assignment 1
+Q1. Write a program to check whether a number is even or odd.
+Type1
+#include<stdio.h>
+void evenodd();
+void main()
+{
+    evenodd();
+}
+
+void evenodd()
+{
+    int num;
+
+    printf("Enter Number : ");
+    scanf("%d",&num);
+
+    if(num%2==0)
+        printf("Even Number");
+    else
+        printf("Odd Number");
+}
+Type2
+#include<stdio.h>
+void evenodd(int);
+void main()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    evenodd(no);
+}
+
+void evenodd(int a)
+{
+    if(a%2==0)
+        printf("Even Number");
+    else
+        printf("Odd Number");
+}
+Type3
+#include<stdio.h>
+int evenodd();
+void main()
+{
+    int result;
+
+    result=evenodd();
+
+    if(result==1)
+        printf("Even Number");
+    else
+        printf("Odd Number");
+}
+
+int evenodd()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    if(no%2==0)
+        return 1;
+    else
+        return 0;
+}
+Type 4
+#include<stdio.h>
+int evenodd(int);
+void main()
+{
+    int no,result;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    result=evenodd(no);
+
+    if(result==1)
+        printf("Even Number");
+    else
+        printf("Odd Number");
+}
+
+int evenodd(int a)
+{
+    if(a%2==0)
+        return 1;
+    else
+        return 0;
+}
+
+Q2.Write a program to check given 3 digit number is palindrome or not.
+Type 1
+#include<stdio.h>
+void palindrome();
+void main()
+{
+    palindrome();
+}
+
+void palindrome()
+{
+    int no,temp;
+	int rev=0,digit;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    temp=no;
+
+    while(no>0)
+    {
+        digit=no%10;
+        rev=rev*10+digit;
+        no=no/10;
+    }
+
+    if(temp==rev)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome Number");
+}
+Type 2
+#include<stdio.h>
+void palindrome(int);
+void main()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    palindrome(no);
+}
+
+void palindrome(int a)
+{
+    int temp,rev=0,digit;
+
+    temp=a;
+
+    while(a>0)
+    {
+        digit=a%10;
+        rev=rev*10+digit;
+        a=a/10;
+    }
+
+    if(temp==rev)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome Number");
+}
+Type3
+#include<stdio.h>
+int palindrome();
+void main()
+{
+    int result;
+
+    result=palindrome();
+
+    if(result==1)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome Number");
+}
+
+int palindrome()
+{
+    int no,temp,rev=0,digit;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    temp=no;
+
+    while(no>0)
+    {
+        digit=no%10;
+        rev=rev*10+digit;
+        no=no/10;
+    }
+
+    if(temp==rev)
+        return 1;
+    else
+        return 0;
+}
+Type4
+#include<stdio.h>
+int palindrome(int);
+void main()
+{
+    int no,result;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    result=palindrome(no);
+
+    if(result==1)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome Number");
+}
+
+int palindrome(int a)
+{
+    int temp,rev=0,digit;
+
+    temp=a;
+
+    while(a>0)
+    {
+        digit=a%10;
+        rev=rev*10+digit;
+        a=a/10;
+    }
+
+    if(temp==rev)
+        return 1;
+    else
+        return 0;
+}
+
+Q3. Write a program to check whether a given year is a leap year.
+Type1
+#include<stdio.h>
+void leapyear();
+void main()
+{
+    leapyear();
+}
+
+void leapyear()
+{
+    int no;
+
+    printf("Enter Year : ");
+    scanf("%d",&no);
+
+    if(no%4==0)
+        printf("Leap Year");
+    else
+        printf("Not Leap Year");
+}
+Type2
+#include<stdio.h>
+void leapyear(int);
+void main()
+{
+    int no;
+
+    printf("Enter Year : ");
+    scanf("%d",&no);
+
+    leapyear(no);
+}
+
+void leapyear(int a)
+{
+    if(a%4==0)
+        printf("Leap Year");
+    else
+        printf("Not Leap Year");
+}
+Type3
+#include<stdio.h>
+int leapyear();
+void main()
+{
+    int result;
+
+    result=leapyear();
+
+    if(result==1)
+        printf("Leap Year");
+    else
+        printf("Not Leap Year");
+}
+
+int leapyear()
+{
+    int no;
+
+    printf("Enter Year : ");
+    scanf("%d",&no);
+
+    if(no%4==0)
+        return 1;
+    else
+        return 0;
+}
+Type4
+#include<stdio.h>
+int leapyear(int);
+void main()
+{
+    int no,result;
+
+    printf("Enter Year : ");
+    scanf("%d",&no);
+
+    result=leapyear(no);
+
+    if(result==1)
+        printf("Leap Year");
+    else
+        printf("Not Leap Year");
+}
+
+int leapyear(int a)
+{
+    if(a%4==0)
+        return 1;
+    else
+        return 0;
+}
+
+Q4. Write a program to check whether a given character is a vowel or consonant.
+Type1
+#include<stdio.h>
+void check();
+void main()
+{
+    check();
+}
+
+void check()
+{
+    char ch;
+
+    printf("Enter Character : ");
+    scanf(" %c",&ch);
+
+    if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+       ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+        printf("Vowel");
+    else
+        printf("Consonant");
+}
+Type2
+#include<stdio.h>
+void check(char);
+void main()
+{
+    char ch;
+
+    printf("Enter Character : ");
+    scanf(" %c",&ch);
+
+    check(ch);
+}
+
+void check(char x)
+{
+    if(x=='a'||x=='e'||x=='i'||x=='o'||x=='u'||
+       x=='A'||x=='E'||a=='I'||x=='O'||x=='U')
+        printf("Vowel");
+    else
+        printf("Consonant");
+}
+Type3
+#include<stdio.h>
+int check();
+void main()
+{
+    int result;
+
+    result=check();
+
+    if(result==1)
+        printf("Vowel");
+    else
+        printf("Consonant");
+}
+
+int check()
+{
+    char ch;
+
+    printf("Enter Character : ");
+    scanf(" %c",&ch);
+
+    if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+       ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+        return 1;
+    else
+        return 0;
+}
+Type4
+#include<stdio.h>
+
+int check(char);
+
+void main()
+{
+    char ch;
+    int result;
+
+    printf("Enter Character : ");
+    scanf(" %c",&ch);
+
+    result=check(ch);
+
+    if(result==1)
+        printf("Vowel");
+    else
+        printf("Consonant");
+}
+
+int check(char x)
+{
+    if(x=='a'||x=='e'||x=='i'||x=='o'||x=='u'||
+       x=='A'||x=='E'||x=='I'||x=='O'||x=='U')
+        return 1;
+    else
+        return 0;
+}
+
+Q5. Write a program to check whether a person is eligible to vote (age >= 18).
+Type1
+#include<stdio.h>
+void vote();
+void main()
+{
+    vote();
+}
+
+void vote()
+{
+    int age;
+
+    printf("Enter Age : ");
+    scanf("%d",&age);
+
+    if(age>=18)
+        printf("Eligible For Vote");
+    else
+        printf("Not Eligible For Vote");
+}
+Type2
+#include<stdio.h>
+void vote(int);
+void main()
+{
+    int age;
+
+    printf("Enter Age : ");
+    scanf("%d",&age);
+
+    vote(age);
+}
+
+void vote(int x)
+{
+    if(x>=18)
+        printf("Eligible For Vote");
+    else
+        printf("Not Eligible For Vote");
+}
+Type3
+#include<stdio.h>
+int vote();
+void main()
+{
+    int result;
+
+    result=vote();
+
+    if(result==1)
+        printf("Eligible For Vote");
+    else
+        printf("Not Eligible For Vote");
+}
+
+int vote()
+{
+    int age;
+
+    printf("Enter Age : ");
+    scanf("%d",&age);
+
+    if(age>=18)
+        return 1;
+    else
+        return 0;
+}
+Type4
+#include<stdio.h>
+int vote(int);
+void main()
+{
+    int age,result;
+
+    printf("Enter Age : ");
+    scanf("%d",&age);
+
+    result=vote(age);
+
+    if(result==1)
+        printf("Eligible For Vote");
+    else
+        printf("Not Eligible For Vote");
+}
+
+int vote(int x)
+{
+    if(x>=18)
+        return 1;
+    else
+        return 0;
+}
+
+Q6. Write a program to check whether a given character is uppercase or lowercase.
+Type1
+#include<stdio.h>
+void check();
+void main()
+{
+    check();
+}
+
+void check()
+{
+    char ch;
+
+    printf("Enter Character : ");
+    scanf(" %c",&ch);
+
+    if(ch>='A' && ch<='Z')
+        printf("Uppercase");
+    else
+        printf("Lowercase");
+}
+Type2
+#include<stdio.h>
+void check(char);
+void main()
+{
+    char ch;
+
+    printf("Enter Character : ");
+    scanf(" %c",&ch);
+
+    check(ch);
+}
+
+void check(char x)
+{
+    if(x>='A' && x<='Z')
+        printf("Uppercase");
+    else
+        printf("Lowercase");
+}
+Type3
+#include<stdio.h>
+int check();
+void main()
+{
+    int result;
+
+    result=check();
+
+    if(result==1)
+        printf("Uppercase");
+    else
+        printf("Lowercase");
+}
+
+int check()
+{
+    char ch;
+
+    printf("Enter Character : ");
+    scanf(" %c",&ch);
+
+    if(ch>='A' && ch<='Z')
+        return 1;
+    else
+        return 0;
+}
+Type4
+#include<stdio.h>
+int check(char);
+void main()
+{
+    char ch;
+    int result;
+
+    printf("Enter Character : ");
+    scanf(" %c",&ch);
+
+    result=check(ch);
+
+    if(result==1)
+        printf("Uppercase");
+    else
+        printf("Lowercase");
+}
+
+int check(char x)
+{
+    if(x>='A' && x<='Z')
+        return 1;
+    else
+        return 0;
+}
+
+Q7. Calculating total salary based on basic. If basic <= 5000, DA, TA and HRA will be 10%, 20% and 25% respectively; otherwise DA, TA and HRA will be 15%, 25% and 30% respectively.
+Type1
+#include<stdio.h>
+void salary();
+void main()
+{
+    salary();
+}
+
+void salary()
+{
+    float basic,da;
+	int ta,hra,total;
+
+    printf("Enter Basic Salary : ");
+    scanf("%f",&basic);
+
+    if(basic<5000)
+    {
+        da=basic*10/100;
+        ta=basic*20/100;
+        hra=basic*25/100;
+    }
+    else
+    {
+        da=basic*15/100;
+        ta=basic*25/100;
+        hra=basic*30/100;
+    }
+
+    total=basic+da+ta+hra;
+
+    printf("Total Salary = %.2f",total);
+}
+Type2
+#include<stdio.h>
+void salary(float);
+void main()
+{
+    float basic;
+
+    printf("Enter Basic Salary : ");
+    scanf("%f",&basic);
+
+    salary(basic);
+}
+
+void salary(float x)
+{
+    float da,ta;
+	int hra,total;
+
+    if(x<5000)
+    {
+        da=x*10/100;
+        ta=x*20/100;
+        hra=x*25/100;
+    }
+    else
+    {
+        da=x*15/100;
+        ta=x*25/100;
+        hra=x*30/100;
+    }
+
+    total=x+da+ta+hra;
+
+    printf("Total Salary = %.2f",total);
+}
+Type3
+#include<stdio.h>
+float salary();
+void main()
+{
+    float result;
+
+    result=salary();
+
+    printf("Total Salary = %.2f",result);
+}
+
+float salary()
+{
+    float basic,da,ta,hra,total;
+
+    printf("Enter Basic Salary : ");
+    scanf("%f",&basic);
+
+    if(basic<5000)
+    {
+        da=basic*10/100;
+        ta=basic*20/100;
+        hra=basic*25/100;
+    }
+    else
+    {
+        da=basic*15/100;
+        ta=basic*25/100;
+        hra=basic*30/100;
+    }
+
+    total=basic+da+ta+hra;
+
+    return total;
+}
+Type4
+#include<stdio.h>
+float salary(float);
+void main()
+{
+    float basic,result;
+
+    printf("Enter Basic Salary : ");
+    scanf("%f",&basic);
+
+    result=salary(basic);
+
+    printf("Total Salary = %.2f",result);
+}
+
+float salary(float x)
+{
+    float da,ta,hra,total;
+
+    if(x<5000)
+    {
+        da=x*10/100;
+        ta=x*20/100;
+        hra=x*25/100;
+    }
+    else
+    {
+        da=x*15/100;
+        ta=x*25/100;
+        hra=x*30/100;
+    }
+
+    total=x+da+ta+hra;
+
+    return total;
+}
+
+Assignment 2
+1. Accept two numbers from user and an operator (+, -, /, *, %) based on that perform the desired operations.
+Type1
+#include<stdio.h>
+void calc();
+void main()
+{
+    calc();
+}
+
+void calc()
+{
+    int no1,no2;
+    char ch;
+
+    printf("Enter 1st Numbers : ");
+    scanf("%d",&no1);
+     printf("Enter 2nd Numbers : ");
+    scanf("%d",&no2);
+
+    printf("Enter Operator (+,-,*,/,%): ");
+    scanf(" %c",&ch);
+
+    if(ch=='+')
+        printf("Addition = %d",no1+no2);
+
+    else if(ch=='-')
+        printf("Subtraction = %d",no1-no2);
+
+    else if(ch=='*')
+        printf("Multiplication = %d",no1*no2);
+
+    else if(ch=='/')
+        printf("Division = %d",no1/no2);
+
+    else if(ch=='%')
+        printf("Modulus = %d",no1%no2);
+
+    else
+        printf("Invalid Operator");
+}
+Type2
+#include<stdio.h>
+void calc(int,int,char);
+void main()
+{
+    int no1,no2;
+    char ch;
+
+     printf("Enter 1st Numbers : ");
+    scanf("%d",&no1);
+     printf("Enter 2nd Numbers : ");
+    scanf("%d",&no2);
+
+    printf("Enter Operator (+,-,*,/,%) : ");
+    scanf(" %c",&ch);
+
+    calc(no1,no2,ch);
+}
+
+void calc(int x,int y,char op)
+{
+    if(op=='+')
+        printf("Addition = %d",x+y);
+
+    else if(op=='-')
+        printf("Subtraction = %d",x-y);
+
+    else if(op=='*')
+        printf("Multiplication = %d",x*y);
+
+    else if(op=='/')
+        printf("Division = %d",x/y);
+
+    else if(op=='%')
+        printf("Modulus = %d",x%y);
+
+    else
+        printf("Invalid Operator");
+}
+Type3
+#include<stdio.h>
+int calc();
+void main()
+{
+    int result;
+
+    result=calc();
+
+    printf("Result = %d",result);
+}
+
+int calc()
+{
+    int no1,no2;
+    char ch;
+
+     printf("Enter 1st Numbers : ");
+    scanf("%d",&no1);
+     printf("Enter 2nd Numbers : ");
+    scanf("%d",&no2);
+
+    printf("Enter Operator (+,-,*,/,%): ");
+    scanf(" %c",&ch);
+
+    if(ch=='+')
+        return no1+no2;
+
+    else if(ch=='-')
+        return no1-no2;
+
+    else if(ch=='*')
+        return no1*no2;
+
+    else if(ch=='/')
+        return no1/no2;
+
+    else if(ch=='%')
+        return no1%no2;
+
+    return 0;
+}
+Type4
+#include<stdio.h>
+int calc(int,int,char);
+void main()
+{
+    int no1,no2,result;
+    char ch;
+
+     printf("Enter 1st Numbers : ");
+    scanf("%d",&no1);
+     printf("Enter 2nd Numbers : ");
+    scanf("%d",&no2);
+
+    printf("Enter Operator (+,-,*,/,%) : ");
+    scanf(" %c",&ch);
+
+    result=calc(no1,no2,ch);
+
+    printf("Result = %d",result);
+}
+
+int calc(int a,int x,char op)
+{
+    if(op=='+')
+        return a+x;
+
+    else if(op=='-')
+        return a-x;
+
+    else if(op=='*')
+        return a*x;
+
+    else if(op=='/')
+        return a/x;
+
+    else if(op=='%')
+        return a%x;
+
+    return 0;
+}
+
+2. Accept three sides of a triangle from the user and determine whether the triangle is equilateral, isosceles, or scalene.
+Type1
+#include<stdio.h>
+void triangle();
+void main()
+{
+    triangle();
+}
+
+void triangle()
+{
+    int s1,s2,s3;
+
+    printf("Enter Three Sides : ");
+    scanf("%d%d%d",&s1,&s2,&s3);
+
+    if(s1==s2 && s2==s3)
+        printf("Equilateral Triangle");
+
+    else if(s1==s2 || s2==s3 || s1==s3)
+        printf("Isosceles Triangle");
+
+    else
+        printf("Scalene Triangle");
+}
+Type2
+#include<stdio.h>
+void triangle(int,int,int);
+void main()
+{
+    int s1,s2,s3;
+
+    printf("Enter Three Sides : ");
+    scanf("%d%d%d",&s1,&s2,&s3);
+
+    triangle(s1,s2,s3);
+}
+
+void triangle(int x,int y,int z)
+{
+    if(x==y && y==z)
+        printf("Equilateral Triangle");
+
+    else if(x==x || y==z || x==z)
+        printf("Isosceles Triangle");
+
+    else
+        printf("Scalene Triangle");
+}
+Type3
+#include<stdio.h>
+int triangle();
+void main()
+{
+    int result;
+
+    result=triangle();
+
+    if(result==1)
+        printf("Equilateral Triangle");
+    else if(result==2)
+        printf("Isosceles Triangle");
+    else
+        printf("Scalene Triangle");
+}
+
+int triangle()
+{
+    int s1,s2,s3;
+
+    printf("Enter Three Sides : ");
+    scanf("%d%d%d",&s1,&s2,&s3);
+
+    if(s1==s2 && s2==s3)
+        return 1;
+
+    else if(s1==s2 || s2==s3 || s1==s3)
+        return 2;
+
+    else
+        return 3;
+}
+Type4
+#include<stdio.h>
+int triangle(int,int,int);
+void main()
+{
+    int s1,s2,s3,result;
+
+    printf("Enter Three Sides : ");
+    scanf("%d%d%d",&s1,&s2,&s3);
+
+    result=triangle(s1,s2,s3);
+
+    if(result==1)
+        printf("Equilateral Triangle");
+    else if(result==2)
+        printf("Isosceles Triangle");
+    else
+        printf("Scalene Triangle");
+}
+
+int triangle(int x,int y,int z)
+{
+    if(x==y && y==z)
+        return 1;
+
+    else if(x==y || x==z || x==z)
+        return 2;
+
+    else
+        return 3;
+}
+
+
+3. Write a program to find greatest of three numbers using nested if-else.
+Type1
+#include<stdio.h>
+void greatest();
+void main()
+{
+    greatest();
+}
+
+void greatest()
+{
+    int no1,no2,no3;
+
+    printf("Enter Three Numbers : ");
+    scanf("%d%d%d",&no1,&no2,&no3);
+
+    if(no1>no2)
+    {
+        if(no1>no3)
+            printf("%d is Greatest",no1);
+        else
+            printf("%d is Greatest",no3);
+    }
+    else
+    {
+        if(no2>no3)
+            printf("%d is Greatest",no2);
+        else
+            printf("%d is Greatest",no3);
+    }
+}
+Type2
+#include<stdio.h>
+void greatest(int,int,int);
+void main()
+{
+    int no1,no2,no3;
+
+    printf("Enter Three Numbers : ");
+    scanf("%d%d%d",&no1,&no2,&no3);
+
+    greatest(no1,no2,no3);
+}
+
+void greatest(int x,int y,int z)
+{
+    if(x>y)
+    {
+        if(x>z)
+            printf("%d is Greatest",x);
+        else
+            printf("%d is Greatest",z);
+    }
+    else
+    {
+        if(y>z)
+            printf("%d is Greatest",y);
+        else
+            printf("%d is Greatest",z);
+    }
+}
+Type3
+#include<stdio.h>
+int greatest();
+void main()
+{
+    int result;
+
+    result=greatest();
+
+    printf("%d is Greatest",result);
+}
+
+int greatest()
+{
+    int no1,no2,no3;
+
+    printf("Enter Three Numbers : ");
+    scanf("%d%d%d",&no1,&no2,&no3);
+
+    if(no1>no2)
+    {
+        if(no1>no3)
+            return no1;
+        else
+            return no3;
+    }
+    else
+    {
+        if(no2>no3)
+            return no2;
+        else
+            return no3;
+    }
+}
+Type4
+#include<stdio.h>
+int greatest(int,int,int);
+void main()
+{
+    int no1,no2,no3,result;
+
+    printf("Enter Three Numbers : ");
+    scanf("%d%d%d",&no1,&no2,&no3);
+
+    result=greatest(no1,no2,no3);
+
+    printf("%d is Greatest",result);
+}
+
+int greatest(int x,int y,int z)
+{
+    if(x>y)
+    {
+        if(y>z)
+            return x;
+        else
+            return z;
+    }
+    else
+    {
+        if(y>z)
+            return y;
+        else
+            return z;
+    }
+}
+4. Ask the user to enter marks. Then show the result based on these rules:
+If marks are more than 75 → show "Distinction"
+If marks are more than 65 → show "First Class"
+If marks are more than 55 → show "Second Class"
+If marks are 40 or more → show "Pass Class"
+If marks are less than 40 → show "Fail"
+Type1
+#include<stdio.h>
+void result();
+void main()
+{
+    result();
+}
+
+void result()
+{
+    int marks;
+
+    printf("Enter Marks : ");
+    scanf("%d",&marks);
+
+    if(marks>75)
+        printf("Distinction");
+
+    else if(marks>65)
+        printf("First Class");
+
+    else if(marks>55)
+        printf("Second Class");
+
+    else if(marks>=40)
+        printf("Pass Class");
+
+    else
+        printf("Fail");
+}
+Type2
+#include<stdio.h>
+void result(int);
+void main()
+{
+    int marks;
+
+    printf("Enter Marks : ");
+    scanf("%d",&marks);
+
+    result(marks);
+}
+
+void result(int x)
+{
+    if(x>75)
+        printf("Distinction");
+
+    else if(x>65)
+        printf("First Class");
+
+    else if(x>55)
+        printf("Second Class");
+
+    else if(x>=40)
+        printf("Pass Class");
+
+    else
+        printf("Fail");
+}
+Type3
+#include<stdio.h>
+int result();
+void main()
+{
+    int ans;
+
+    ans=result();
+
+    if(ans==1)
+        printf("Distinction");
+
+    else if(ans==2)
+        printf("First Class");
+
+    else if(ans==3)
+        printf("Second Class");
+
+    else if(ans==4)
+        printf("Pass Class");
+
+    else
+        printf("Fail");
+}
+
+int result()
+{
+    int marks;
+
+    printf("Enter Marks : ");
+    scanf("%d",&marks);
+
+    if(marks>75)
+        return 1;
+
+    else if(marks>65)
+        return 2;
+
+    else if(marks>55)
+        return 3;
+
+    else if(marks>=40)
+        return 4;
+
+    else
+        return 5;
+}
+Type4
+#include<stdio.h>
+int result(int);
+void main()
+{
+    int marks,ans;
+
+    printf("Enter Marks : ");
+    scanf("%d",&marks);
+
+    ans=result(marks);
+
+    if(ans==1)
+        printf("Distinction");
+
+    else if(ans==2)
+        printf("First Class");
+
+    else if(ans==3)
+        printf("Second Class");
+
+    else if(ans==4)
+        printf("Pass Class");
+
+    else
+        printf("Fail");
+}
+
+int result(int x)
+{
+    if(x>75)
+        return 1;
+
+    else if(x>65)
+        return 2;
+
+    else if(x>55)
+        return 3;
+
+    else if(x>=40)
+        return 4;
+
+    else
+        return 5;
+}
+
+5. Accept the price from user. Ask the user if he is a student (user may say y or n). If he is a student and he has purchased more than 500 then discount is 20%, otherwise discount is 10%. But if he is not a student then if he has purchased more than 600, discount is 15%, otherwise there is no discount.
+Type1
+#include<stdio.h>
+void discount();
+void main()
+{
+    discount();
+}
+
+void discount()
+{
+    float price,dis,total;
+    char ch;
+
+    printf("Enter Price : ");
+    scanf("%f",&price);
+
+    printf("Are You Student(y/n) : ");
+    scanf(" %c",&ch);
+
+    if(ch=='y' || ch=='Y')
+    {
+        if(price>500)
+            dis=price*20/100;
+        else
+            dis=price*10/100;
+    }
+    else
+    {
+        if(price>600)
+            dis=price*15/100;
+        else
+            dis=0;
+    }
+
+    total=price-dis;
+
+    printf("Discount = %.2f\n",dis);
+    printf("Total Amount = %.2f",total);
+}
+Type2
+#include<stdio.h>
+void discount(float,char);
+void main()
+{
+    float price;
+    char ch;
+
+    printf("Enter Price : ");
+    scanf("%f",&price);
+
+    printf("Are You Student(y/n) : ");
+    scanf(" %c",&ch);
+
+    discount(price,ch);
+}
+
+void discount(float a,char x)
+{
+    float dis,total;
+
+    if(x=='y' || x=='Y')
+    {
+        if(a>500)
+            dis=a*20/100;
+        else
+            dis=a*10/100;
+    }
+    else
+    {
+        if(a>600)
+            dis=a*15/100;
+        else
+            dis=0;
+    }
+
+    total=a-dis;
+
+    printf("Discount = %.2f\n",dis);
+    printf("Total Amount = %.2f",total);
+}
+Type3
+#include<stdio.h>
+float discount();
+void main()
+{
+    float ans;
+
+    ans=discount();
+
+    printf("Total Amount = %.2f",ans);
+}
+
+float discount()
+{
+    float price,dis,total;
+    char ch;
+
+    printf("Enter Price : ");
+    scanf("%f",&price);
+
+    printf("Are You Student(y/n) : ");
+    scanf(" %c",&ch);
+
+    if(ch=='y' || ch=='Y')
+    {
+        if(price>500)
+            dis=price*20/100;
+        else
+            dis=price*10/100;
+    }
+    else
+    {
+        if(price>600)
+            dis=price*15/100;
+        else
+            dis=0;
+    }
+
+    total=price-dis;
+
+    return total;
+}
+Type4
+#include<stdio.h>
+float discount(float,char);
+void main()
+{
+    float price,ans;
+    char ch;
+
+    printf("Enter Price : ");
+    scanf("%f",&price);
+
+    printf("Are You Student(y/n) : ");
+    scanf(" %c",&ch);
+
+    ans=discount(price,ch);
+
+    printf("Total Amount = %.2f",ans);
+}
+
+float discount(float a,char x)
+{
+    float dis,total;
+
+    if(x=='y' || x=='Y')
+    {
+        if(a>500)
+            dis=a*20/100;
+        else
+            dis=a*10/100;
+    }
+    else
+    {
+        if(a>600)
+            dis=a*15/100;
+        else
+            dis=0;
+    }
+
+    total=a-dis;
+
+    return total;
+}
+
+6.Accept a number and check if it is divisible by 3, 5, or both.
+(Print "Divisible by 3 but not by 5" or "Divisible by 5 but not by 3" or "Divisible by both" or "Divisible by None")
+Type1
+#include<stdio.h>
+void check();
+void main()
+{
+    check();
+}
+
+void check()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    if(no%3==0 && no%5==0)
+        printf("Divisible by 3 and 5");
+
+    else if(no%3==0)
+        printf("Divisible by 3");
+
+    else if(no%5==0)
+        printf("Divisible by 5");
+
+    else
+        printf("Not Divisible by 3 and 5");
+}
+Type2
+#include<stdio.h>
+void check(int);
+void main()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    check(no);
+}
+
+void check(int x)
+{
+    if(x%3==0 && x%5==0)
+        printf("Divisible by 3 and 5");
+
+    else if(x%3==0)
+        printf("Divisible by 3");
+
+    else if(x%5==0)
+        printf("Divisible by 5");
+
+    else
+        printf("Not Divisible by 3 and 5");
+}
+Type3
+#include<stdio.h>
+int check();
+void main()
+{
+    int ans;
+
+    ans=check();
+
+    if(ans==1)
+        printf("Divisible by 3 and 5");
+
+    else if(ans==2)
+        printf("Divisible by 3");
+
+    else if(ans==3)
+        printf("Divisible by 5");
+
+    else
+        printf("Not Divisible by 3 and 5");
+}
+
+int check()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    if(no%3==0 && no%5==0)
+        return 1;
+
+    else if(no%3==0)
+        return 2;
+
+    else if(no%5==0)
+        return 3;
+
+    else
+        return 4;
+}
+Type4
+#include<stdio.h>
+int check(int);
+void main()
+{
+    int no,ans;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    ans=check(no);
+
+    if(ans==1)
+        printf("Divisible by 3 and 5");
+
+    else if(ans==2)
+        printf("Divisible by 3");
+
+    else if(ans==3)
+        printf("Divisible by 5");
+
+    else
+        printf("Not Divisible by 3 and 5");
+}
+
+int check(int x)
+{
+    if(x%3==0 && x%5==0)
+        return 1;
+
+    else if(x%3==0)
+        return 2;
+
+    else if(x%5==0)
+        return 3;
+
+    else
+        return 4;
+}
+
+7. Accept the age and check if the person is:
+   Child (age < 12)
+  Teenager (12–19)
+  Adult (20–59)
+  Senior (60 and above)
+Type1
+#include<stdio.h>
+void agecheck();
+void main()
+{
+    agecheck();
+}
+
+void agecheck()
+{
+    int age;
+
+    printf("Enter Age : ");
+    scanf("%d",&age);
+
+    if(age<12)
+        printf("Child");
+
+    else if(age<=19)
+        printf("Teenager");
+
+    else if(age<=59)
+        printf("Adult");
+
+    else
+        printf("Senior Citizen");
+}
+Type2
+#include<stdio.h>
+void agecheck(int);
+void main()
+{
+    int age;
+
+    printf("Enter Age : ");
+    scanf("%d",&age);
+
+    agecheck(age);
+}
+
+void agecheck(int x)
+{
+    if(x<12)
+        printf("Child");
+
+    else if(x<=19)
+        printf("Teenager");
+
+    else if(x<=59)
+        printf("Adult");
+
+    else
+        printf("Senior Citizen");
+}
+Type3
+#include<stdio.h>
+int agecheck();
+void main()
+{
+    int ans;
+
+    ans=agecheck();
+
+    if(ans==1)
+        printf("Child");
+
+    else if(ans==2)
+        printf("Teenager");
+
+    else if(ans==3)
+        printf("Adult");
+
+    else
+        printf("Senior Citizen");
+}
+
+int agecheck()
+{
+    int age;
+
+    printf("Enter Age : ");
+    scanf("%d",&age);
+
+    if(age<12)
+        return 1;
+
+    else if(age<=19)
+        return 2;
+
+    else if(age<=59)
+        return 3;
+
+    else
+        return 4;
+}
+Type4
+#include<stdio.h>
+int agecheck(int);
+void main()
+{
+    int age,ans;
+
+    printf("Enter Age : ");
+    scanf("%d",&age);
+
+    ans=agecheck(age);
+
+    if(ans==1)
+        printf("Child");
+
+    else if(ans==2)
+        printf("Teenager");
+
+    else if(ans==3)
+        printf("Adult");
+
+    else
+        printf("Senior Citizen");
+}
+
+int agecheck(int x)
+{
+    if(x<12)
+        return 1;
+
+    else if(x<=19)
+        return 2;
+
+    else if(x<=59)
+        return 3;
+
+    else
+        return 4;
+}
+   
