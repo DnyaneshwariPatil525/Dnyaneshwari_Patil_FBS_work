@@ -1,0 +1,496 @@
+String user define Function
+Q. Write a user define functions for ::
+mystrcpy()
+#include<stdio.h>
+void mystrcpy(char x[], char y[]);
+void main()
+{
+    char src[100], dest[100];
+
+    printf("Enter String: ");
+    scanf("%s", src);
+
+    mystrcpy(dest, src);
+
+    printf("Copied String = %s", dest);
+}
+
+void mystrcpy(char x[], char y[])
+{
+    int i = 0;
+
+    while(y[i] != '\0')
+    {
+        x[i] = y[i];
+        i++;
+    }
+
+    x[i] = '\0';
+}
+
+mystrlen()
+#include<stdio.h>
+int mystrlen(char x[]);
+void main()
+{
+    char str[100];
+    int len;
+
+    printf("Enter String: ");
+    scanf("%s", str);
+
+    len = mystrlen(str);
+
+    printf("Length = %d", len);
+}
+
+int mystrlen(char x[])
+{
+    int i = 0;
+
+    while(x[i] != '\0')
+    {
+        i++;
+    }
+
+    return i;
+}
+
+mystrcmp()
+#include<stdio.h>
+int mystrcmp(char a[], char b[]);
+void main()
+{
+    char str1[100], str2[100];
+    int result;
+
+    printf("Enter First String: ");
+    scanf("%s", str1);
+
+    printf("Enter Second String: ");
+    scanf("%s", str2);
+
+    result = mystrcmp(str1, str2);
+
+    if(result == 0)
+        printf("Strings are Equal");
+    else
+        printf("Strings are Not Equal");
+}
+
+int mystrcmp(char a[], char b[])
+{
+    int i = 0;
+
+    while(a[i] != '\0' && b[i] != '\0')
+    {
+        if(a[i] != b[i])
+        {
+            return 1;
+        }
+
+        i++;
+    }
+
+    if(a[i] == '\0' && b[i] == '\0')
+        return 0;
+    else
+        return 1;
+}
+
+mystrcat()
+#include<stdio.h>
+void mystrcat(char a[], char b[]);
+void main()
+{
+    char str1[100], str2[100];
+
+    printf("Enter First String: ");
+    scanf("%s", str1);
+
+    printf("Enter Second String: ");
+    scanf("%s", str2);
+
+    mystrcat(str1, str2);
+
+    printf("Concatenated String = %s", str1);
+}
+
+void mystrcat(char a[], char b[])
+{
+    int i = 0, j = 0;
+
+    while(a[i] != '\0')
+    {
+        i++;
+    }
+
+    while(b[j] != '\0')
+    {
+        a[i] = b[j];
+        i++;
+        j++;
+    }
+
+    a[i] = '\0';
+}
+
+mystrncpy()
+#include<stdio.h>
+void mystrncpy(char dest[], char src[], int n);
+void main()
+{
+    char str1[50], str2[50];
+    int n;
+
+    printf("Enter String : ");
+    gets(str1);
+
+    printf("Enter Number of Characters : ");
+    scanf("%d",&n);
+
+    mystrncpy(str2,str1,n);
+
+    printf("Copied String = %s",str2);
+}
+void mystrncpy(char dest[], char src[], int n)
+{
+    int i;
+
+    for(i=0; i<n && src[i]!='\0'; i++)
+    {
+        dest[i]=src[i];
+    }
+
+    dest[i]='\0';
+}
+
+
+mystrupper()
+#include<stdio.h>
+void mystrupper(char str[]);
+void main()
+{
+    char str[50];
+
+    printf("Enter String : ");
+    scanf(" %[^\n]",str);
+
+    mystrupper(str);
+
+    printf("Upper String = %s",str);
+}
+void mystrupper(char str[])
+{
+    int i=0;
+
+    while(str[i]!='\0')
+    {
+        if(str[i]>='a' && str[i]<='z')
+        {
+            str[i]=str[i]-32;
+        }
+        i++;
+    }
+}
+
+mystrlower()
+#include<stdio.h>
+void mystrlower(char str[]);
+void main()
+{
+    char str[50];
+
+    printf("Enter String : ");
+    scanf(" %[^\n]",str);
+
+    mystrlower(str);
+
+    printf("Lower String = %s",str);
+}
+void mystrlower(char str[])
+{
+    int i=0;
+
+    while(str[i]!='\0')
+    {
+        if(str[i]>='A' && str[i]<='Z')
+        {
+            str[i]=str[i]+32;
+        }
+        i++;
+    }
+}
+
+
+mystrrev()
+#include<stdio.h>
+void mystrrev(char str[]);
+void main()
+{
+    char str[50];
+
+    printf("Enter String : ");
+    scanf(" %[^\n]",str);
+
+    mystrrev(str);
+
+    printf("Reverse String = %s",str);
+}
+void mystrrev(char str[])
+{
+    int i=0,j;
+    char temp;
+
+    while(str[i]!='\0')
+        i++;
+
+    j=i-1;
+    i=0;
+
+    while(i<j)
+    {
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+
+        i++;
+        j--;
+    }
+}
+
+mystrstr()
+#include<stdio.h>
+int mystrstr(char str[], char sub[]);
+void main()
+{
+    char str[100], sub[50];
+
+    printf("Enter Main String : ");
+    gets(str);
+
+    printf("Enter Sub String : ");
+    gets(sub);
+
+    if(mystrstr(str,sub))
+        printf("Substring Found");
+    else
+        printf("Substring Not Found");
+}
+
+int mystrstr(char str[], char sub[])
+{
+    int i,j;
+
+    for(i=0; str[i]!='\0'; i++)
+    {
+        j=0;
+
+        while(sub[j]!='\0' && str[i+j]==sub[j])
+        {
+            j++;
+        }
+
+        if(sub[j]=='\0')
+            return 1;
+    }
+
+}
+
+mystrcasecmp()
+#include<stdio.h>
+int mystrcasecmp(char str1[],char str2[]);
+void main()
+{
+    char str1[50],str2[50];
+
+    printf("Enter First String : ");
+    gets(str1);
+
+    printf("Enter Second String : ");
+    gets(str2);
+
+    if(mystrcasecmp(str1,str2)==0)
+        printf("Strings are Equal");
+    else
+        printf("Strings are Not Equal");
+}
+
+int mystrcasecmp(char str1[],char str2[])
+{
+    int i=0;
+    char ch1,ch2;
+
+    while(str1[i]!='\0' && str2[i]!='\0')
+    {
+        ch1=str1[i];
+        ch2=str2[i];
+
+        if(ch1>='A' && ch1<='Z')
+            ch1=ch1+32;
+
+        if(ch2>='A' && ch2<='Z')
+            ch2=ch2+32;
+
+        if(ch1!=ch2)
+            return ch1-ch2;
+
+        i++;
+    }
+
+    return str1[i]-str2[i];
+}
+
+mystrchr()
+#include<stdio.h>
+int mystrchr(char str[],char ch);
+void main()
+{
+    char str[50],ch;
+
+    printf("Enter String : ");
+    gets(str);
+
+    printf("Enter Character : ");
+    scanf("%c",&ch);
+
+    if(mystrchr(str,ch))
+        printf("Character Found");
+    else
+        printf("Character Not Found");
+}
+
+int mystrchr(char str[],char ch)
+{
+    int i=0;
+
+    while(str[i]!='\0')
+    {
+        if(str[i]==ch)
+            return 1;
+
+        i++;
+    }
+
+    return 0;
+}
+
+mystrncmp()
+#include<stdio.h>
+int mystrncmp(char str1[],char str2[],int n);
+void main()
+{
+    char str1[50],str2[50];
+    int n;
+
+    printf("Enter First String : ");
+    gets(str1);
+
+    printf("Enter Second String : ");
+    gets(str2);
+
+    printf("Enter Number of Characters : ");
+    scanf("%d",&n);
+
+    if(mystrncmp(str1,str2,n)==0)
+        printf("Strings are Equal");
+    else
+        printf("Strings are Not Equal");
+}
+
+int mystrncmp(char str1[],char str2[],int n)
+{
+    int i;
+
+    for(i=0;i<n && str1[i]!='\0' && str2[i]!='\0';i++)
+    {
+        if(str1[i]!=str2[i])
+            return str1[i]-str2[i];
+    }
+
+    return 0;
+}
+
+mystrnstr()
+#include<stdio.h>
+int mystrnstr(char str[],char sub[],int n);
+void main()
+{
+    char str[100],sub[50];
+    int n;
+
+    printf("Enter Main String : ");
+    gets(str);
+
+    printf("Enter Sub String : ");
+    gets(sub);
+
+    printf("Enter Limit : ");
+    scanf("%d",&n);
+
+    if(mystrnstr(str,sub,n))
+        printf("Substring Found");
+    else
+        printf("Substring Not Found");
+}
+
+int mystrnstr(char str[],char sub[],int n)
+{
+    int i,j;
+
+    for(i=0;i<n && str[i]!='\0';i++)
+    {
+        j=0;
+
+        while(sub[j]!='\0' && str[i+j]==sub[j] && (i+j)<n)
+        {
+            j++;
+        }
+
+        if(sub[j]=='\0')
+            return 1;
+    }
+
+    return 0;
+}
+
+mystrncat()
+#include<stdio.h>
+
+void mystrncat(char str1[],char str2[],int n);
+
+void main()
+{
+    char str1[100],str2[50];
+    int n;
+
+    printf("Enter First String : ");
+    gets(str1);
+
+    printf("Enter Second String : ");
+    gets(str2);
+
+    printf("Enter Number of Characters : ");
+    scanf("%d",&n);
+
+    mystrncat(str1,str2,n);
+
+    printf("Result = %s",str1);
+}
+
+void mystrncat(char str1[],char str2[],int n)
+{
+    int i=0,j=0;
+
+    while(str1[i]!='\0')
+        i++;
+
+    while(str2[j]!='\0' && j<n)
+    {
+        str1[i]=str2[j];
+        i++;
+        j++;
+    }
+
+    str1[i]='\0';
+}
