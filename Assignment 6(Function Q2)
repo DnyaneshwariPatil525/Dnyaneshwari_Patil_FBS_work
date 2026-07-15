@@ -1,0 +1,1572 @@
+Function
+Q2. Convert Assignment 3 programs into functions with four types of functions (excluding range programs). Convert range programs into two types of functions:
+Without parameter, without return type
+With parameter and without return type
+Assignment 3
+Check the given number is prime or not.
+Type 1
+#include<stdio.h>
+void prime();
+void main()
+{
+    prime();
+}
+
+void prime()
+{
+    int no,i,flag=0;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    for(i=2;i<no;i++)
+    {
+        if(no%i==0)
+        {
+            flag=1;
+            break;
+        }
+    }
+
+    if(flag==0)
+        printf("Prime Number");
+    else
+        printf("Not Prime Number");
+}
+Type 2
+#include<stdio.h>
+void prime(int);
+void main()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    prime(no);
+}
+
+void prime(int a)
+{
+    int i,flag=0;
+
+    for(i=2;i<a;i++)
+    {
+        if(a%i==0)
+        {
+            flag=1;
+            break;
+        }
+    }
+
+    if(flag==0)
+        printf("Prime Number");
+    else
+        printf("Not Prime Number");
+}
+Type 3
+#include<stdio.h>
+int prime();
+void main()
+{
+    int result;
+
+    result=prime();
+
+    if(result==1)
+        printf("Prime Number");
+    else
+        printf("Not Prime Number");
+}
+
+int prime()
+{
+    int no,i,flag=0;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    for(i=2;i<no;i++)
+    {
+        if(no%i==0)
+        {
+            flag=1;
+            break;
+        }
+    }
+
+    if(flag==0)
+        return 1;
+    else
+        return 0;
+}
+Type 4
+#include<stdio.h>
+int prime(int);
+void main()
+{
+    int no,result;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    result=prime(no);
+
+    if(result==1)
+        printf("Prime Number");
+    else
+        printf("Not Prime Number");
+}
+
+int prime(int x)
+{
+    int i,flag=0;
+
+    for(i=2;i<x;i++)
+    {
+        if(x%i==0)
+        {
+            flag=1;
+            break;
+        }
+    }
+
+    if(flag==0)
+        return 1;
+    else
+        return 0;
+}
+
+Check the given number is Armstrong number or not.
+Type 1
+#include<stdio.h>
+void armstrong();
+void main()
+{
+    armstrong();
+}
+
+void armstrong()
+{
+    int no,temp,sum=0,digit;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    temp=no;
+
+    while(no>0)
+    {
+        digit=no%10;
+        sum=sum+(digit*digit*digit);
+        no=no/10;
+    }
+
+    if(temp==sum)
+        printf("Armstrong Number");
+    else
+        printf("Not Armstrong Number");
+}
+Type 2
+#include<stdio.h>
+void armstrong(int);
+void main()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    armstrong(no);
+}
+
+void armstrong(int a)
+{
+    int temp,sum=0,digit;
+
+    temp=a;
+
+    while(a>0)
+    {
+        digit=a%10;
+        sum=sum+(digit*digit*digit);
+        a=a/10;
+    }
+
+    if(temp==sum)
+        printf("Armstrong Number");
+    else
+        printf("Not Armstrong Number");
+}
+Type 3
+#include<stdio.h>
+int armstrong();
+void main()
+{
+    int ans;
+
+    ans=armstrong();
+
+    if(ans==1)
+        printf("Armstrong Number");
+    else
+        printf("Not Armstrong Number");
+}
+
+int armstrong()
+{
+    int no,temp,sum=0,digit;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    temp=no;
+
+    while(no>0)
+    {
+        digit=no%10;
+        sum=sum+(digit*digit*digit);
+        no=no/10;
+    }
+
+    if(temp==sum)
+        return 1;
+    else
+        return 0;
+}
+Type 4
+#include<stdio.h>
+int armstrong(int);
+void main()
+{
+    int no,ans;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    ans=armstrong(no);
+
+    if(ans==1)
+        printf("Armstrong Number");
+    else
+        printf("Not Armstrong Number");
+}
+
+int armstrong(int a)
+{
+    int temp,sum=0,digit;
+
+    temp=a;
+
+    while(a>0)
+    {
+        digit=a%10;
+        sum=sum+(digit*digit*digit);
+        a=a/10;
+    }
+
+    if(temp==sum)
+        return 1;
+    else
+        return 0;
+}
+
+Check the given number is Perfect number or not.
+Type 1
+#include<stdio.h>
+void perfect();
+void main()
+{
+    perfect();
+}
+
+void perfect()
+{
+    int no,i,sum=0;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    for(i=1;i<no;i++)
+    {
+        if(no%i==0)
+            sum=sum+i;
+    }
+
+    if(sum==no)
+        printf("Perfect Number");
+    else
+        printf("Not Perfect Number");
+}
+Type 2
+#include<stdio.h>
+void perfect(int);
+void main()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    perfect(no);
+}
+
+void perfect(int x)
+{
+    int i,sum=0;
+
+    for(i=1;i<x;i++)
+    {
+        if(x%i==0)
+            sum=sum+i;
+    }
+
+    if(sum==x)
+        printf("Perfect Number");
+    else
+        printf("Not Perfect Number");
+}
+Type 3
+#include<stdio.h>
+int perfect();
+void main()
+{
+    int ans;
+
+    ans=perfect();
+
+    if(ans==1)
+        printf("Perfect Number");
+    else
+        printf("Not Perfect Number");
+}
+
+int perfect()
+{
+    int no,i,sum=0;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    for(i=1;i<no;i++)
+    {
+        if(no%i==0)
+            sum=sum+i;
+    }
+
+    if(sum==no)
+        return 1;
+    else
+        return 0;
+}
+Type 4
+#include<stdio.h>
+int perfect(int);
+void main()
+{
+    int no,ans;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    ans=perfect(no);
+
+    if(ans==1)
+        printf("Perfect Number");
+    else
+        printf("Not Perfect Number");
+}
+
+int perfect(int x)
+{
+    int i,sum=0;
+
+    for(i=1;i<x;i++)
+    {
+        if(x%i==0)
+            sum=sum+i;
+    }
+
+    if(sum==x)
+        return 1;
+    else
+        return 0;
+}
+
+Find factorial of given number.
+Type 1
+#include<stdio.h>
+void factorial();
+void main()
+{
+    factorial();
+}
+
+void factorial()
+{
+    int no,i,fact=1;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    for(i=1;i<=no;i++)
+    {
+        fact=fact*i;
+    }
+
+    printf("Factorial = %d",fact);
+}
+Type 2
+#include<stdio.h>
+int perfect(int);
+void main()
+{
+    int no,ans;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    ans=perfect(no);
+
+    if(ans==1)
+        printf("Perfect Number");
+    else
+        printf("Not Perfect Number");
+}
+
+int perfect(int x)
+{
+    int i,sum=0;
+
+    for(i=1;i<x;i++)
+    {
+        if(x%i==0)
+            sum=sum+i;
+    }
+
+    if(sum==x)
+        return 1;
+    else
+        return 0;
+}
+Type 3
+#include<stdio.h>
+int factorial();
+void main()
+{
+    int ans;
+
+    ans=factorial();
+
+    printf("Factorial = %d",ans);
+}
+
+int factorial()
+{
+    int no,i,fact=1;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    for(i=1;i<=no;i++)
+    {
+        fact=fact*i;
+    }
+
+    return fact;
+}
+Type 4
+#include<stdio.h>
+int factorial(int);
+void main()
+{
+    int no,ans;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    ans=factorial(no);
+
+    printf("Factorial = %d",ans);
+}
+
+int factorial(int x)
+{
+    int i,fact=1;
+
+    for(i=1;i<=x;i++)
+    {
+        fact=fact*i;
+    }
+
+    return fact;
+}
+
+Check the given number is Strong number or not.
+Type 1
+#include<stdio.h>
+void strong();
+void main()
+{
+    strong();
+}
+
+void strong()
+{
+    int no,temp;
+	int sum=0,digit;
+	int i,fact;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    temp=no;
+
+    while(no>0)
+    {
+        digit=no%10;
+        fact=1;
+
+        for(i=1;i<=digit;i++)
+        {
+            fact=fact*i;
+        }
+
+        sum=sum+fact;
+        no=no/10;
+    }
+
+    if(temp==sum)
+        printf("Strong Number");
+    else
+        printf("Not Strong Number");
+}
+Type 2
+#include<stdio.h>
+void strong(int);
+void main()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    strong(no);
+}
+
+void strong(int x)
+{
+    int temp,sum=0,digit;
+	int i,fact;
+
+    temp=x;
+
+    while(x>0)
+    {
+        digit=x%10;
+        fact=1;
+
+        for(i=1;i<=digit;i++)
+        {
+            fact=fact*i;
+        }
+
+        sum=sum+fact;
+        x=x/10;
+    }
+
+    if(temp==sum)
+        printf("Strong Number");
+    else
+        printf("Not Strong Number");
+}
+Type 3
+#include<stdio.h>
+int strong();
+void main()
+{
+    int ans;
+
+    ans=strong();
+
+    if(ans==1)
+        printf("Strong Number");
+    else
+        printf("Not Strong Number");
+}
+
+int strong()
+{
+    int no,temp,sum=0,digit,i,fact;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    temp=no;
+
+    while(no>0)
+    {
+        digit=no%10;
+        fact=1;
+
+        for(i=1;i<=digit;i++)
+        {
+            fact=fact*i;
+        }
+
+        sum=sum+fact;
+        no=no/10;
+    }
+
+    if(temp==sum)
+        return 1;
+    else
+        return 0;
+}
+Type 4
+#include<stdio.h>
+int strong(int);
+void main()
+{
+    int no,ans;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    ans=strong(no);
+
+    if(ans==1)
+        printf("Strong Number");
+    else
+        printf("Not Strong Number");
+}
+
+int strong(int x)
+{
+    int temp,sum=0,digit,i,fact;
+
+    temp=x;
+
+    while(x>0)
+    {
+        digit=x%10;
+        fact=1;
+
+        for(i=1;i<=digit;i++)
+        {
+            fact=fact*i;
+        }
+
+        sum=sum+fact;
+        x=x/10;
+    }
+
+    if(temp==sum)
+        return 1;
+    else
+        return 0;
+}
+
+Check the given number is Palindrome number or not.
+Type 1
+#include<stdio.h>
+void palindrome();
+void main()
+{
+    palindrome();
+}
+
+void palindrome()
+{
+    int no,temp;
+	int rev=0,digit;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    temp=no;
+
+    while(no>0)
+    {
+        digit=no%10;
+        rev=rev*10+digit;
+        no=no/10;
+    }
+
+    if(temp==rev)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome Number");
+}
+Type 2
+#include<stdio.h>
+void palindrome(int);
+void main()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    palindrome(no);
+}
+
+void palindrome(int x)
+{
+    int temp;
+	int rev=0,digit;
+
+    temp=x;
+
+    while(x>0)
+    {
+        digit=x%10;
+        rev=rev*10+digit;
+        x=x/10;
+    }
+
+    if(temp==rev)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome Number");
+}
+Type 3
+#include<stdio.h>
+int palindrome();
+void main()
+{
+    int ans;
+
+    ans=palindrome();
+
+    if(ans==1)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome Number");
+}
+
+int palindrome()
+{
+    int no,temp;
+	int rev=0,digit;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    temp=no;
+
+    while(no>0)
+    {
+        digit=no%10;
+        rev=rev*10+digit;
+        no=no/10;
+    }
+
+    if(temp==rev)
+        return 1;
+    else
+        return 0;
+}
+Type 4
+#include<stdio.h>
+int palindrome(int);
+void main()
+{
+    int no,ans;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    ans=palindrome(no);
+
+    if(ans==1)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome Number");
+}
+
+int palindrome(int x)
+{
+    int temp;
+	int rev=0,digit;
+
+    temp=x;
+
+    while(x>0)
+    {
+        digit=x%10;
+        rev=rev*10+digit;
+        x=x/10;
+    }
+
+    if(temp==rev)
+        return 1;
+    else
+        return 0;
+}
+
+Find sum of first and last digit of given number.
+Type 1
+#include<stdio.h>
+void sumdigit();
+void main()
+{
+    sumdigit();
+}
+
+void sumdigit()
+{
+    int no,first,last;
+	int sum;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    last=no%10;
+
+    while(no>=10)
+    {
+        no=no/10;
+    }
+
+    first=no;
+
+    sum=first+last;
+
+    printf("Sum = %d",sum);
+}
+Type 2
+#include<stdio.h>
+void sumdigit(int);
+void main()
+{
+    int no;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    sumdigit(no);
+}
+
+void sumdigit(int x)
+{
+    int first,last;
+	int sum=0;
+
+    last=x%10;
+
+    while(x>=10)
+    {
+        x=x/10;
+    }
+
+    first=x;
+
+    sum=first+last;
+
+    printf("Sum = %d",sum);
+}
+Type 3
+#include<stdio.h>
+int sumdigit();
+void main()
+{
+    int ans;
+ 
+	ans=sumdigit();
+	
+	printf("Sum = %d",ans);
+}
+
+int sumdigit()
+{
+    int no,first,last;
+	int sum;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    last=no%10;
+
+    while(no>=10)
+    {
+        no=no/10;
+    }
+
+    first=no;
+
+    sum=first+last;
+
+    return sum;
+}
+Type 4
+#include<stdio.h>
+int sumdigit(int);
+void main()
+{
+    int no,ans;
+
+    printf("Enter Number : ");
+    scanf("%d",&no);
+
+    ans=sumdigit(no);
+ 
+    printf("Sum = %d",ans);
+}
+
+int sumdigit(int x)
+{
+    int first,last;
+	int sum=0;
+
+    last=x%10;
+
+    while(x>=10)
+    {
+        x=x/10;
+    }
+
+    first=x;
+
+    sum=first+last;
+
+    return sum;
+}
+
+Rang
+1. Print Armstrong numbers in the given range 1 to n.
+Type 1
+#include<stdio.h>
+void armstrong();
+void main()
+{
+    armstrong();
+}
+
+void armstrong()
+{
+    int n, i, num, rem, sum;
+
+    printf("Enter the value of n : ");
+    scanf("%d", &n);
+
+    printf("Armstrong numbers from 1 to %d are:\n", n);
+
+    for(i = 1; i <= n; i++)
+    {
+        num = i;
+        sum = 0;
+
+        while(num > 0)
+        {
+            rem = num % 10;
+            sum = sum + (rem * rem * rem);
+            num = num / 10;
+        }
+
+        if(sum == i)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+Type 2
+#include<stdio.h>
+void armstrong(int);
+void main()
+{
+    int n;
+
+    printf("Enter the value of n : ");
+    scanf("%d",&n);
+
+    armstrong(n);
+}
+
+void armstrong(int n)
+{
+    int i, num, rem, sum;
+
+    printf("Armstrong numbers from 1 to %d are:\n", n);
+
+    for(i = 1; i <= n; i++)
+    {
+        num = i;
+        sum = 0;
+
+        while(num > 0)
+        {
+            rem = num % 10;
+            sum = sum + (rem * rem * rem);
+            num = num / 10;
+        }
+
+        if(sum == i)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+
+2. Print Prime numbers in the given range 1 to n.
+Type 1
+#include<stdio.h>
+void prime();
+void main()
+{
+    prime();
+}
+
+void prime()
+{
+    int n, i, j, count;
+
+    printf("Enter the value of n : ");
+    scanf("%d", &n);
+
+    printf("Prime numbers from 1 to %d are:\n", n);
+
+    for(i = 2; i <= n; i++)
+    {
+        count = 0;
+
+        for(j = 1; j <= i; j++)
+        {
+            if(i % j == 0)
+            {
+                count++;
+            }
+        }
+
+        if(count == 2)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+Type 2
+#include<stdio.h>
+void prime(int);
+void main()
+{
+    int n;
+
+    printf("Enter the value of n : ");
+    scanf("%d", &n);
+
+    prime(n);
+}
+
+void prime(int n)
+{
+    int i, j, count;
+
+    printf("Prime numbers from 1 to %d are:\n", n);
+
+    for(i = 2; i <= n; i++)
+    {
+        count = 0;
+
+        for(j = 1; j <= i; j++)
+        {
+            if(i % j == 0)
+            {
+                count++;
+            }
+        }
+
+        if(count == 2)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+
+3. Print Perfect numbers in the given range 1 to n.
+Type 1
+#include<stdio.h>
+void perfect();
+void main()
+{
+    perfect();
+}
+
+void perfect()
+{
+    int n, i, j, sum;
+
+    printf("Enter the value of n : ");
+    scanf("%d", &n);
+
+    printf("Perfect numbers from 1 to %d are:\n", n);
+
+    for(i = 1; i <= n; i++)
+    {
+        sum = 0;
+
+        for(j = 1; j < i; j++)
+        {
+            if(i % j == 0)
+            {
+                sum = sum + j;
+            }
+        }
+
+        if(sum == i)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+Type 2
+#include<stdio.h>
+void perfect(int);
+void main()
+{
+    int n;
+
+    printf("Enter the value of n : ");
+    scanf("%d",&n);
+
+    perfect(n);
+}
+
+void perfect(int n)
+{
+    int i, j, sum;
+
+    printf("Perfect numbers from 1 to %d are:\n", n);
+
+    for(i = 1; i <= n; i++)
+    {
+        sum = 0;
+
+        for(j = 1; j < i; j++)
+        {
+            if(i % j == 0)
+            {
+                sum = sum + j;
+            }
+        }
+
+        if(sum == i)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+
+4. Print Strong numbers in the given range 1 to n.
+Type 1
+#include<stdio.h>
+void strong();
+void main()
+{
+    strong();
+}
+
+void strong()
+{
+    int n, i, num, rem, sum, fact;
+
+    printf("Enter the value of n : ");
+    scanf("%d",&n);
+
+    printf("Strong numbers from 1 to %d are:\n", n);
+
+    for(i=1; i<=n; i++)
+    {
+        num = i;
+        sum = 0;
+
+        while(num > 0)
+        {
+            rem = num % 10;
+            fact = 1;
+
+            while(rem > 0)
+            {
+                fact = fact * rem;
+                rem--;
+            }
+
+            sum = sum + fact;
+            num = num / 10;
+        }
+
+        if(sum == i)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+Type 2
+#include<stdio.h>
+void strong(int);
+void main()
+{
+    int n;
+
+    printf("Enter the value of n : ");
+    scanf("%d",&n);
+
+    strong(n);
+}
+
+void strong(int n)
+{
+    int i, num, rem, sum, fact;
+
+    printf("Strong numbers from 1 to %d are:\n", n);
+
+    for(i=1; i<=n; i++)
+    {
+        num = i;
+        sum = 0;
+
+        while(num > 0)
+        {
+            rem = num % 10;
+            fact = 1;
+
+            while(rem > 0)
+            {
+                fact = fact * rem;
+                rem--;
+            }
+
+            sum = sum + fact;
+            num = num / 10;
+        }
+
+        if(sum == i)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+
+5. Write a menu-driven program to take a number from the user and perform the following operations:
+
+   1. To check whether the number is even or odd.
+   2. To check whether the number is prime or not.
+   3. To check whether the number is palindrome or not.
+   4. To check whether the number is positive, negative, or zero.
+   5. To reverse a number.
+   6. To find the sum of digits.
+Type 1
+#include<stdio.h>
+
+void evenOdd();
+void prime();
+void palindrome();
+void sign();
+void reverse();
+void sumDigits();
+
+void main()
+{
+    int choice;
+
+    do
+    {
+        printf("\n------ MENU ------");
+        printf("\n1. Even or Odd");
+        printf("\n2. Prime or Not Prime");
+        printf("\n3. Palindrome or Not");
+        printf("\n4. Positive, Negative or Zero");
+        printf("\n5. Reverse Number");
+        printf("\n6. Sum of Digits");
+        printf("\n7. Exit");
+
+        printf("\nEnter your choice : ");
+        scanf("%d",&choice);
+
+        switch(choice)
+        {
+            case 1:
+                evenOdd();
+                break;
+
+            case 2:
+                prime();
+                break;
+
+            case 3:
+                palindrome();
+                break;
+
+            case 4:
+                sign();
+                break;
+
+            case 5:
+                reverse();
+                break;
+
+            case 6:
+                sumDigits();
+                break;
+
+            case 7:
+                printf("\nProgram Ended...");
+                break;
+
+            default:
+                printf("\nInvalid Choice");
+        }
+
+    }while(choice!=7);
+}
+
+void evenOdd()
+{
+    int n;
+
+    printf("\nEnter Number : ");
+    scanf("%d",&n);
+
+    if(n%2==0)
+        printf("Even Number");
+    else
+        printf("Odd Number");
+}
+
+void prime()
+{
+    int n,i,count=0;
+
+    printf("\nEnter Number : ");
+    scanf("%d",&n);
+
+    for(i=1;i<=n;i++)
+    {
+        if(n%i==0)
+            count++;
+    }
+
+    if(count==2)
+        printf("Prime Number");
+    else
+        printf("Not Prime Number");
+}
+
+void palindrome()
+{
+    int n,num,rem,rev=0;
+
+    printf("\nEnter Number : ");
+    scanf("%d",&n);
+
+    num=n;
+
+    while(n>0)
+    {
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+    }
+
+    if(num==rev)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome Number");
+}
+
+void sign()
+{
+    int n;
+
+    printf("\nEnter Number : ");
+    scanf("%d",&n);
+
+    if(n>0)
+        printf("Positive Number");
+    else if(n<0)
+        printf("Negative Number");
+    else
+        printf("Zero");
+}
+
+void reverse()
+{
+    int n,rem,rev=0;
+
+    printf("\nEnter Number : ");
+    scanf("%d",&n);
+
+    while(n>0)
+    {
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+    }
+
+    printf("Reverse = %d",rev);
+}
+
+void sumDigits()
+{
+    int n,rem,sum=0;
+
+    printf("\nEnter Number : ");
+    scanf("%d",&n);
+
+    while(n>0)
+    {
+        rem=n%10;
+        sum=sum+rem;
+        n=n/10;
+    }
+
+    printf("Sum of Digits = %d",sum);
+}
+Type 2
+#include<stdio.h>
+
+void evenOdd(int);
+void prime(int);
+void palindrome(int);
+void sign(int);
+void reverse(int);
+void sumDigits(int);
+
+void main()
+{
+    int n, choice;
+
+    printf("Enter Number : ");
+    scanf("%d",&n);
+
+    do
+    {
+        printf("\n------ MENU ------");
+        printf("\n1. Even or Odd");
+        printf("\n2. Prime or Not Prime");
+        printf("\n3. Palindrome or Not");
+        printf("\n4. Positive, Negative or Zero");
+        printf("\n5. Reverse Number");
+        printf("\n6. Sum of Digits");
+        printf("\n7. Exit");
+
+        printf("\nEnter your choice : ");
+        scanf("%d",&choice);
+
+        switch(choice)
+        {
+            case 1:
+                evenOdd(n);
+                break;
+
+            case 2:
+                prime(n);
+                break;
+
+            case 3:
+                palindrome(n);
+                break;
+
+            case 4:
+                sign(n);
+                break;
+
+            case 5:
+                reverse(n);
+                break;
+
+            case 6:
+                sumDigits(n);
+                break;
+
+            case 7:
+                printf("\nProgram Ended...");
+                break;
+
+            default:
+                printf("\nInvalid Choice");
+        }
+
+    }while(choice!=7);
+}
+
+void evenOdd(int n)
+{
+    if(n%2==0)
+        printf("Even Number");
+    else
+        printf("Odd Number");
+}
+
+void prime(int n)
+{
+    int i, count=0;
+
+    for(i=1; i<=n; i++)
+    {
+        if(n%i==0)
+            count++;
+    }
+
+    if(count==2)
+        printf("Prime Number");
+    else
+        printf("Not Prime Number");
+}
+
+void palindrome(int n)
+{
+    int num, rem, rev=0;
+
+    num=n;
+
+    while(n>0)
+    {
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+    }
+
+    if(num==rev)
+        printf("Palindrome Number");
+    else
+        printf("Not Palindrome Number");
+}
+
+void sign(int n)
+{
+    if(n>0)
+        printf("Positive Number");
+    else if(n<0)
+        printf("Negative Number");
+    else
+        printf("Zero");
+}
+
+void reverse(int n)
+{
+    int rem, rev=0;
+
+    while(n>0)
+    {
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+    }
+
+    printf("Reverse = %d",rev);
+}
+
+void sumDigits(int n)
+{
+    int rem, sum=0;
+
+    while(n>0)
+    {
+        rem=n%10;
+        sum=sum+rem;
+        n=n/10;
+    }
+
+    printf("Sum of Digits = %d",sum);
+}
+
