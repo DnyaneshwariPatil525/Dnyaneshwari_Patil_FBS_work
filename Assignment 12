@@ -1,0 +1,323 @@
+Assignment 12 (String)
+
+1. Write a program to scan a string from the user, then scan a single character and search it in the accepted string.
+#include<stdio.h>
+void search( char txt[] ,char lett);
+void main()
+{
+	char str[50];
+	char ch;
+	
+	printf("Enter String: ");
+	scanf("%[^\n]",str);
+	
+	printf("Enter Character: ");
+	scanf(" %c",&ch);
+	
+	search(str,ch);
+}
+
+void search( char txt[] ,char lett)
+{
+	int i ,flag=0;
+	
+	for(i=0;txt[i] != '\0';i++)
+	{
+		if(txt[i] == lett)
+		{
+			flag = 1;
+			break;
+		}
+	}
+	if(flag == 1)
+	   printf("Character Found");
+	else
+	   printf("Character Not Found");   
+}
+
+2. WAP to replace all occurrences of 'a' with '$' in a string.
+#include<stdio.h>
+void replace( char txt[]);
+void main()
+{
+	char str[50];
+	
+	printf("Enter String: ");
+	scanf("%[^\n]",str);
+	
+	replace(str);
+}
+
+void replace( char txt[])
+{
+	int i ;
+	
+	for(i=0;txt[i] != '\0';i++)
+	{
+		if(txt[i] == 'a')
+		{
+		   txt[i] ='$';
+			
+		}
+	}
+	   printf("New String = %s",txt);
+}
+
+3. WAP to remove the nth index character from a non-empty string.
+#include<stdio.h>
+void removechar( char txt[] ,int x);
+void main()
+{
+	char str[50];
+	int no;
+	
+	printf("Enter String: ");
+	scanf("%[^\n]",str);
+	
+	printf("Enter Index:");
+	scanf("%d",&no);	
+	removechar(str,no);
+}
+
+void removechar( char txt[] ,int x)
+{
+	int i ;
+	
+	for(i=x;txt[i] != '\0';i++)
+	{
+		   txt[i] = txt[i + 1];
+			
+	}
+	   printf("New String = %s",txt);
+
+}
+
+4. WAP to form a new string where the first character and the last character have been exchanged.
+#include<stdio.h>
+void exchange( char txt[]);
+void main()
+{
+	char str[50];
+	
+	printf("Enter String: ");
+	scanf("%[^\n]",str);
+	
+	exchange(str);
+
+}
+
+void exchange( char txt[])
+{
+	int len;
+	char temp;
+	
+	 len = strlen(txt);
+	
+	temp = txt[0];
+	txt[0] = txt[len - 1];
+	txt[len - 1] = temp;
+    
+      printf("New String = %s",txt);
+
+}
+
+5. WAP to count the number of vowels in a string.
+#include<stdio.h>
+void countvowel(char txt[]);
+void main()
+{
+    char str[50];
+
+    printf("Enter String: ");
+    scanf(" %[^\n]", str);
+
+    countvowel(str);
+}
+
+void countvowel(char txt[])
+{
+    int i, count = 0;
+
+    for(i = 0; txt[i] != '\0'; i++)
+    {
+        if(txt[i]=='a' || txt[i]=='e' || txt[i]=='i' ||
+           txt[i]=='o' || txt[i]=='u' ||
+           txt[i]=='A' || txt[i]=='E' || txt[i]=='I' ||
+           txt[i]=='O' || txt[i]=='U')
+        {
+            count++;
+        }
+    }
+
+    printf("Total Vowels = %d", count);
+}
+
+6. WAP to take in a string and replace every blank space with a special symbol.
+#include<stdio.h>
+void replaceSpace(char txt[]);
+void main()
+{
+    char str[50];
+
+    printf("Enter String: ");
+    scanf(" %[^\n]", str);
+
+    replaceSpace(str);
+
+    printf("New String = %s", str);
+}
+
+void replaceSpace(char txt[])
+{
+    int i;
+
+    for(i = 0; txt[i] != '\0'; i++)
+    {
+        if(txt[i] == ' ')
+        {
+            txt[i] = '#';
+        }
+    }
+}
+
+7. WAP to remove the characters of odd index values in a string.
+#include<stdio.h>
+void removeOdd(char txt[]);
+void main()
+{
+    char str[50];
+
+    printf("Enter String: ");
+    scanf(" %[^\n]", str);
+
+    removeOdd(str);
+
+    printf("New String = %s", str);
+}
+
+void removeOdd(char txt[])
+{
+    int i, j = 0;
+    char temp[50];
+
+    for(i = 0; txt[i] != '\0'; i++)
+    {
+        if(i % 2 == 0)
+        {
+            temp[j] = txt[i];
+            j++;
+        }
+    }
+
+    temp[j] = '\0';
+
+    for(i = 0; temp[i] != '\0'; i++)
+    {
+        txt[i] = temp[i];
+    }
+
+    txt[i] = '\0';
+}
+
+8. WAP to calculate the number of words present in a string.
+#include<stdio.h>
+void countWord(char txt[]);
+void main()
+{
+    char str[100];
+
+    printf("Enter String: ");
+    scanf(" %[^\n]", str);
+
+    countWord(str);
+}
+
+void countWord(char txt[])
+{
+    int i, count = 1;
+
+    if(txt[0] == '\0')
+    {
+        printf("Total Words = 0");
+        return;
+    }
+
+    for(i = 0; txt[i] != '\0'; i++)
+    {
+        if(txt[i] == ' ' && txt[i+1] != ' ' && txt[i+1] != '\0')
+        {
+            count++;
+        }
+    }
+
+    printf("Total Words = %d", count);
+}
+
+9. WAP to take in two strings and display the larger string without using built-in functions.
+#include<stdio.h>
+void largerString(char first[], char second[]);
+void main()
+{
+    char str1[50], str2[50];
+
+    printf("Enter First String: ");
+    scanf(" %[^\n]", str1);
+
+    printf("Enter Second String: ");
+    scanf(" %[^\n]", str2);
+
+    largerString(str1, str2);
+}
+
+void largerString(char first[], char second[])
+{
+    int i = 0, j = 0;
+
+    while(first[i] != '\0')
+        i++;
+
+    while(second[j] != '\0')
+        j++;
+
+    if(i > j)
+        printf("Larger String = %s", first);
+    else if(j > i)
+        printf("Larger String = %s", second);
+    else
+        printf("Both Strings are of Equal Length");
+}
+
+10. Write a program to check whether a string is palindrome or not.
+#include<stdio.h>
+#include<string.h>
+void palindrome(char text[]);
+void main()
+{
+    char str[50];
+
+    printf("Enter String: ");
+    scanf(" %[^\n]", str);
+
+    palindrome(str);
+}
+
+void palindrome(char text[])
+{
+    int i, len, flag = 1;
+
+    len = strlen(text);
+
+    for(i = 0; i < len / 2; i++)
+    {
+        if(text[i] != text[len - 1 - i])
+        {
+            flag = 0;
+            break;
+        }
+    }
+
+    if(flag == 1)
+        printf("String is Palindrome");
+    else
+        printf("String is Not Palindrome");
+}
