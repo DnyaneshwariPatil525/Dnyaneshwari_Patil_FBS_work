@@ -1,0 +1,143 @@
+Name:Dnyaneshwari Patil
+FRN-12J0526/022
+Set A
+
+Q1
+#include<stdio.>
+ void main()
+  {
+    int no1,no2,i,j,sum=0;
+    int flag;
+    printf("Enter Number 1:");
+    scanf("%d",&no1);
+    printf("Enter Number 2:");
+    scanf("%d",&no2);
+
+    for(i=no1;i<=no2;i++)
+     {
+       if(i<2)
+         continue;
+        flag=1;
+         for(j=2;j<i/2;i++)
+          {
+           if(i%j == 0)
+             {
+               flag =0;
+               break;
+              }
+           }
+        if(flag == 1)
+            sum=sum+i;
+    } 
+    print("Sum Of Prime Number : %d",sum);
+}
+
+Q2
+#include<stdio.h>
+void main()
+ {
+   char str[50],ch;
+   int i;
+     printf("Enter String:");
+     scanf("%s",str);
+     printf(Enter Character:");
+     scanf("%c",&ch);
+     for(i=0;str[i]!='\0';i++)
+      {
+        if(str[i] == ch)
+          { 
+            str[i]='#';
+           }
+       }
+    printf("String = %s",str);
+  }
+
+Q3
+#include<stdio.h>
+typedef struct Task
+{
+  int tid;
+  char des[50];
+  char status[50];
+}Task;
+
+void addTask(Task t1,int *count);
+void updateTask(Task t1[],int count);
+void displayTask(Task t1[],count);
+
+void main()
+{
+  Task t1[10];
+  int choice,count=0;
+
+  do
+  {
+    printf("1.Add Task ");
+    printf("2.Update Task ");
+    printf("3.Display Task ");
+    printf("4.Exit");
+
+    printf("Enter a Choice : ");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+      case 1:
+             addTask(t1,&count);
+             break;
+      case 2:
+             updateTask(t1,count);
+             break;
+      case 3:
+             displayTask(t1,count);
+             break;
+      case 4:
+             break;
+
+     default:
+            printf("Invalid Choice ");
+   }
+  }while(choice!=4);
+}
+
+void addTask(Task t1,int *count)
+{
+  printf("Enter Task ID:");
+  scanf("%d",&t1[*count].tid);
+  printf("Enter Task Description :");
+  scanf("%s",t1[*Count].des);
+  printf("Enter Status :");
+  scanf("%s",t1[*count].stutus);
+  (*count)++;
+}
+ 
+void updateTask(Task t1[],int count)
+{
+  int tid,i;
+  printf("Enter Task ID:");
+  scanf("%d",&tid);
+
+  for(i=0;i<count;i++)
+  {
+     if(t1[i] == tid)
+     {   
+        printf("Enter Status:");
+        scanf("%s",t1[i].status);
+      }
+    }
+   printf("Task not found");
+}
+ 
+void displayTask(Task t1[],count)
+{
+  int i;
+  if(count ==0)
+   {
+      printf("Task not found");
+    }
+ for(i=0;i<count;i++)
+  {
+     printf("Task ID : %d",t1[i].tid);
+     printf("Task Description : %s",t1[i],des);
+     printf("Task Status : %s",t1[i].status);
+  }
+}
